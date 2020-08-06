@@ -30,8 +30,8 @@ function App() {
   }, [balGBP, transactions]);
 
   const handleClick = () => {
-    localStorage.setItem("balGBP", JSON.stringify(0));
-    localStorage.setItem("transactions", JSON.stringify([]));
+    localStorage.removeItem("balGBP");
+    localStorage.removeItem("transactions");
     setTransactions([]);
     setBalGBP(0);
   };
