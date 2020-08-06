@@ -29,6 +29,13 @@ function App() {
     localStorage.setItem("transactions", JSON.stringify(transactions));
   }, [balGBP, transactions]);
 
+  const handleClick = () => {
+    localStorage.setItem("balGBP", JSON.stringify(0));
+    localStorage.setItem("transactions", JSON.stringify([]));
+    setTransactions([]);
+    setBalGBP(0);
+  };
+
   return (
     <div className="App">
       <h1>Banking App</h1>
@@ -39,6 +46,7 @@ function App() {
         balGBP={balGBP}
         setTransactions={setTransactions}
       />
+      <button onClick={handleClick}>Clear local Storage</button>
     </div>
   );
 }
